@@ -7,10 +7,10 @@ class Product < ApplicationRecord
   validates :title, :description, :image_url, presence: true
   validates :title, uniqueness: true
   # numericality option to verify that the price is a valid number
-  validates :price, numericality: {greater_than_or_equal_to: 0.01}
+  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   # allow_blank option to avoid getting multiple error messages when the field is blank.
-  validates ​:image_url​, ​allow_blank: ​​true​, ​format: {
-    with: %r{\.(gif|jpg|png)\z}i,
-    message: 'must be a URL for GIF, PNG, JPG image.' 
+  validates :image_url, allow_blank: true, format: {
+    with: /\.(gif|jpg|png)\z/i,
+    message: 'must be a URL for GIF, PNG or JPG image.'
   }
 end
