@@ -6,6 +6,19 @@ one:
   email: anujrtx@gmail.com
   pay_type: Check
 
+another_one:
+  name: Anuj Tomas
+  address: delhi
+  email: anuj@gmail.com
+  pay_type: Check
+  created_at: <%= 2.days.ago %>
+
+other_customer:
+  name: shyam
+  email: shyam@gmail.com
+  address: delhi
+  pay_type: Check
+
 two:
   name: MyString
   address: MyText
