@@ -24,6 +24,7 @@ Things you may want to cover:
 * ...
 
 * NOTE -: rails tailwindcss:watch
+test
 
 ```
 To complete our retrospective, let’s see how much code we’ve written. There’s a Rails command for that, too:
