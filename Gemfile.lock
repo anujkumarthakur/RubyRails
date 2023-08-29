@@ -161,6 +161,11 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (7.0.7)
       actionpack (= 7.0.7)
       activesupport (= 7.0.7)
@@ -185,6 +190,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.6.4-x86_64-linux)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.30-x86_64-linux)
@@ -228,8 +234,10 @@ DEPENDENCIES
   pg (~> 1.5, >= 1.5.3)
   puma (~> 5.0)
   rails (~> 7.0.7)
+  rails_12factor
   selenium-webdriver
   sprockets-rails
+  sqlite3
   stimulus-rails
   tailwindcss-rails
   turbo-rails

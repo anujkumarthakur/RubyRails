@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+    volumes:
+      - ./log:/home/anuj/work/depot/log
+    secrets:
+      - source: master_key
+        target: /home/anuj/work/depot/config/master.key
+    ports:
+      - "8001:80"
+    depends_on:
+      - db
+secrets:
+  master_key:
+    file: ./config/master.key
