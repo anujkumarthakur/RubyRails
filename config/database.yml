@@ -28,7 +28,7 @@ test:
   host: localhost
   port: 5432
 
-production:
-  <<: *default
-  adapter: sqllite3
-  database: db/production.sqlite3
+# production:
+#   <<: *default
+#   adapter: sqllite3
+#   database: db/production.sqlite3
