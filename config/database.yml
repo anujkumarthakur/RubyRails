@@ -30,5 +30,5 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
+  adapter: sqllite3
   database: db/production.sqlite3
