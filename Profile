@@ -1,0 +1,1 @@
+web: STATEMENT_TIMEOUT=30s bundle exec puma -C config/puma.rb
