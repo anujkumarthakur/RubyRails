@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
     protected
         def authorize
-            unless User.find_by(id: session[:user_id])
+            unless User.find_by(id: session[:user_id]) || signup_action?
                 redirect_to login_url, notice: "Please log in"
             end
         end
@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
                     logger.error flash.now[:notice]
                 end
             end
+        end
+
+        def signup_action?
+            controller_name == 'users' && (action_name == 'new' || action_name == 'create')
         end
 end
