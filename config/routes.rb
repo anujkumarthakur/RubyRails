@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   post 'user2s/create', to: 'user2s#create'
   get 'user2s/login', to: 'user2s#login', as: 'login'
   post 'user2s/login', to: 'user2s#authenticate'
-  delete 'logout', to: 'user2s#logout', as: 'logout'
+  get 'user2s/dashboard', to: 'user2s#dashboard', as: 'user2s_dashboard'
+  delete 'user2s/logout', to: 'user2s#logout', as: 'user2s_logout'
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
