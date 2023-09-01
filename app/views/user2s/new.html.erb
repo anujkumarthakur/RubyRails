@@ -1,0 +1,17 @@
+<h1>Signup</h1>
+
+<%= form_with(model: @user2, url: user2s_create_path) do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username, name: "user2[username]" %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password, name: "user2[password]" %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email, name: "user2[email]" %>
+
+  <%= form.label :birthdate %>
+  <%= form.date_field :birthdate, name: "user2[birthdate]" %>
+
+  <%= form.submit "Signup" %>
+<% end %>

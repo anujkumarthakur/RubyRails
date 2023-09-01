@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   get 'admin' => 'admin#index'
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
-  end
+  # controller :sessions do
+  #   get 'login' => :new
+  #   post 'login' => :create
+  #   delete 'logout' => :destroy
+  # end
 
   # get 'sessions/new'
   get 'sessions/create'
@@ -20,6 +20,12 @@ Rails.application.routes.draw do
     resources :carts
     root 'store#index', as: 'store_index', via: :all
   end
+
+  get 'user2s/new', to: 'user2s#new', as: 'new_user2'
+  post 'user2s/create', to: 'user2s#create'
+  get 'user2s/login', to: 'user2s#login', as: 'login'
+  post 'user2s/login', to: 'user2s#authenticate'
+  delete 'logout', to: 'user2s#logout', as: 'logout'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
