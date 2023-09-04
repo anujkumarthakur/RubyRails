@@ -1,13 +1,18 @@
 class User2sController < ApplicationController
   before_action :authenticate_user, except: [:dashboard, :new, :create, :login, :authenticate]
   def new
-    @user2 = User2.new
+    if session[:user2_id]
+      redirect_to user2s_dashboard_path
+    else
+      @user2 = User2.new
+    end
   end
 
   def create
     @user2 = User2.new(user2_params)
 
     if @user2.save
+      session[:user2_id] = @user2.id
       redirect_to "/", notice: 'User2 created successfully.'
     else
       render :new
@@ -15,32 +20,36 @@ class User2sController < ApplicationController
   end
 
   def login
+    if session[:user2_id]
+      redirect_to user2s_dashboard_path
+    end
   end
 
   def authenticate
     @user2 = User2.find_by(username: params[:user2][:username])
 
     if @user2 && @user2.password == params[:user2][:password]
-      redirect_to "/", notice: 'Logged in successfully.'
+      session[:user2_id] = @user2.id
+      redirect_to user2s_dashboard_path, notice: 'Logged in successfully.'
     else
       flash.now[:alert] = 'Invalid username or password.'
       render :login
     end
   end
 
-  # def logout
-  #   puts "Logout action called"
-  #   session[:user2_id] = nil
-  #   redirect_to login_path, notice: 'Logged out successfully.'
-  # end
+  def logout
+    puts "Logout action called"
+    session[:user2_id] = nil
+    redirect_to login_path, notice: 'Logged out successfully.'
+  end
   
-  # def dashboard
-  #   if session[:user2_id]
-  #   else
-  #     flash[:alert] = 'Please log in.'
-  #     redirect_to login_path
-  #   end
-  # end
+  def dashboard
+    if session[:user2_id]
+    else
+      flash[:alert] = 'Please log in.'
+      redirect_to login_path
+    end
+  end
   private
 
   def user2_params

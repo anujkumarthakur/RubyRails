@@ -1,3 +1,5 @@
 <h1>Welcome to Your Dashboard</h1>
 
-<%= link_to "Logout", user2s_logout_path, method: :delete, data: { confirm: "Are you sure you want to log out?" } %>
+<%= form_tag user2s_logout_path, method: :delete do %>
+  <%= button_tag "Logout", type: :submit, data: { confirm: "Are you sure you want to log out?" } %>
+<% end %>
