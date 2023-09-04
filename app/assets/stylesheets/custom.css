@@ -1,0 +1,10 @@
+/* custom.css */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-actions {
+    margin-top: 10px;
+}
