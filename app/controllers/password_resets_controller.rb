@@ -7,7 +7,7 @@ class PasswordResetsController < ApplicationController
       redirect_to login_path, notice: "Password reset successful. Please log in with your new password."
     else
       flash.now[:alert] = "User with that email not found."
-      render :edit
+      render :new
     end
   end
 end
