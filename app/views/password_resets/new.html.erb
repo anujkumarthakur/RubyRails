@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+  <h1>Reset Password</h1>
+
+  <%= form_with(model: @user2, url: password_resets_update_path) do |form| %>
+    <div class="field">
+      <%= form.label :enter_email %>
+      <%= form.email_field :email, name: "user2[email]" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :new_Password %>
+      <%= form.password_field :password, name: "user2[password]" %>
+    </div>
+
+    <%= form.submit "Reset Password", id: "reset-password-button" %>
+  <% end %>
+</div>
