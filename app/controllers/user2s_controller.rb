@@ -32,7 +32,7 @@ class User2sController < ApplicationController
       session[:user2_id] = @user2.id
       redirect_to user2s_dashboard_path, notice: 'Logged in successfully.'
     else
-      flash.now[:alert] = 'Invalid username or password.'
+      flash[:alert] = 'Invalid username or password.'
       render :login
     end
   end

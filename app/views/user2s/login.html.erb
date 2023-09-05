@@ -1,10 +1,12 @@
 <div style="text-align: center;">
   <h1 style="color: blue; font-size: 24px;">Login</h1>
   
-  <% if flash[:notice] %>
-    <div class="alert">
-      <%= flash[:notice] %>
-    </div>
+  <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% if flash[:alert].present? %>
+    <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= flash[:alert] %></p>
   <% end %>
 
   <%= form_with(url: user2s_login_path) do |form| %>
