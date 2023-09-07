@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'payments/new'
+  post 'payments/create'
+  # get 'password_resets/new'
+  # get 'password_resets/create'
+  # get 'password_resets/edit'
+  # get 'password_resets/update'
   get 'admin' => 'admin#index'
   controller :sessions do
     # get 'login' => :new
@@ -21,7 +27,7 @@ Rails.application.routes.draw do
     root 'store#index', as: 'store_index', via: :all
   end
   # config/routes.rb
-  resources :payments, only: [:new, :create]
+  # resources :payments, only: [:new, :create]
 
   get 'user2s/new', to: 'user2s#new', as: 'new_user2'
   post 'user2s/create', to: 'user2s#create'
