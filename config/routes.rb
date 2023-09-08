@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'payments/new'
   post 'payments/create'
+  get 'payments/transaction_history', to: 'payments#transaction_history'
+
   # get 'password_resets/new'
   # get 'password_resets/create'
   # get 'password_resets/edit'

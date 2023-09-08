@@ -1,0 +1,34 @@
+<div class="table-container">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Charge ID</th>
+        <th>Status</th>
+        <th>Amount (INR)</th>
+        <th>Payment Method</th>
+        <th>Credit Card Number</th>
+        <th>Expiration Date</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @charges.each do |charge| %>
+        <tr>
+          <td><%= charge.id %></td>
+          <td>
+            <% if charge.status == "succeeded" %>
+              <span class="status-success">Success</span>
+            <% else %>
+              <span class="status-failed">Failed</span>
+            <% end %>
+          </td>
+          <td><%= charge.amount / 100.0 %></td>
+          <td><%= charge.payment_method_details.type %></td>
+          <td><%= charge.payment_method_details.card.last4 %></td>
+          <td><%= charge.payment_method_details.card.exp_month %>/<%= charge.payment_method_details.card.exp_year %></td>
+          <td><%= Time.at(charge.created).strftime(" %d, %Y %I:%M %p") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -8,3 +8,36 @@
 .form-actions {
     margin-top: 10px;
 }
+
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: auto;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #f0f4f7;
+    font-weight: bold;
+    color: #333;
+}
+
+.status-success {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
